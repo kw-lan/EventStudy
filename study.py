@@ -34,7 +34,7 @@ def run():
 
     for index, row in event_df.iterrows():
         print('processing no. {}'.format(str(index)))
-        ticker, event_date = row['ticker'], row['date'].split(' ')[0]
+     ticker, event_date = row['ticker'], str(row['date']).split(' ')[0]
         window_df = ReturnCalculator(ticker, event_date, args.stock_index).calculate_window_abnormal(
             args.window_size, args.window_distance, args.estimation_period
         )
